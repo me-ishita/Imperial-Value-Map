@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Imperial College London — Partnership Value Map</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:       #F1EFE8;
+  --surface:  #FFFDF8;
+  --navy:     #071735;
+  --blue:     #153868;
+  --gold:     #A9781F;
+  --gold-lt:  #D4A84B;
+  --gold-p:   #F5E9CC;
+  --gold-m:   #E8D49A;
+  --border:   #DDD5C0;
+  --text:     #1A1A28;
+  --tmid:     #3B4256;
+  --tlt:      #6A7080;
+  --ca-bg:    #FDFAF2;
+  --ca-bdr:   #D9B96A;
+  --cb-bg:    #F0F5FF;
+  --cb-bdr:   #9CB4DC;
+  --shadow-sm:0 8px 24px rgba(7,23,53,.08);
+  --shadow-md:0 18px 48px rgba(7,23,53,.13);
+  --shadow-lg:0 28px 70px rgba(7,23,53,.18);
+  --nav-h:    54px;
+}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Lora',Georgia,serif;color:var(--text);font-size:15px;line-height:1.7;
+  background:
+    radial-gradient(circle at 16% 0%,rgba(212,168,75,.18),transparent 30%),
+    radial-gradient(circle at 86% 8%,rgba(21,56,104,.12),transparent 28%),
+    linear-gradient(180deg,#F8F6EF 0%,var(--bg) 34%,#ECE8DD 100%);
+}
+
+/* ── NAVBAR ─────────────────────────────────── */
+#nav{
+  position:fixed;top:0;left:0;right:0;height:var(--nav-h);
+  background:rgba(255,253,248,.92);backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(169,120,31,.22);z-index:1000;
+  box-shadow:0 10px 30px rgba(7,23,53,.08);
+  display:flex;align-items:center;padding:0 28px;
+}
+.n-brand{font-size:12px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--navy);margin-right:auto;white-space:nowrap;}
+.n-brand em{color:var(--gold);font-style:normal;}
+.n-links{display:flex;gap:2px;}
+.n-link{padding:5px 12px;font-size:11px;font-family:'Lora',serif;font-style:italic;color:var(--tlt);text-decoration:none;border-radius:4px;transition:color .18s,background .18s;white-space:nowrap;}
+.n-link:hover{color:var(--navy);background:var(--gold-p);}
+.n-link.active{color:var(--navy);background:var(--gold-p);font-style:normal;font-weight:600;}
+.n-link.active::before{content:'';display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--gold);margin-right:5px;vertical-align:middle;}
+
+/* ── PAGE ─────────────────────────────────── */
+.page{max-width:1180px;margin:0 auto;padding:calc(var(--nav-h)+38px) 30px 86px;}
+
+/* ── HERO ─────────────────────────────────── */
+.campus-visual{
+  position:relative;margin-bottom:22px;border-radius:12px;overflow:hidden;
+  border:1px solid rgba(255,255,255,.42);box-shadow:var(--shadow-lg);
+  background:var(--navy);aspect-ratio:16/9;
+}
+.campus-visual img{display:block;width:100%;height:100%;object-fit:cover;object-position:center center;}
+.campus-visual::before{content:'';position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold-lt),var(--gold));z-index:1;}
+.campus-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,23,53,.01),rgba(7,23,53,.12));pointer-events:none;}
+.hero{
+  background:
+    linear-gradient(135deg,rgba(255,253,248,.98) 0%,rgba(248,243,229,.95) 100%),
+    var(--surface);
+  border:1px solid rgba(169,120,31,.24);border-radius:12px;border-top:4px solid var(--gold);
+  padding:42px 40px 40px;margin-bottom:66px;
+  display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start;
+  box-shadow:var(--shadow-md);
+}
+.hero-left{padding-top:4px;}
+.hero-eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:14px;}
+.hero-title{font-size:clamp(29px,3.7vw,44px);font-weight:700;color:var(--navy);line-height:1.13;margin-bottom:14px;}
+.hero-title em{font-style:italic;color:var(--gold);}
+.hero-sub{font-size:14px;font-style:italic;color:var(--tmid);max-width:520px;margin-bottom:24px;line-height:1.75;}
+.hero-rule{width:52px;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-lt));border-radius:2px;margin-bottom:24px;}
+.hero-note{font-size:12.5px;color:var(--tlt);max-width:440px;line-height:1.65;}
+.stemb-intro{font-size:13px;color:var(--tmid);line-height:1.7;margin-bottom:14px;}
+.stemb-intro strong{color:var(--navy);font-weight:700;}
+.stemb-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:16px 0 14px;}
+.stemb-card{
+  min-height:98px;background:linear-gradient(180deg,#FCF8EE 0%,#F6EBCF 100%);
+  border:1px solid rgba(169,120,31,.25);border-radius:8px;padding:12px 8px;
+  text-align:center;display:flex;flex-direction:column;justify-content:center;align-items:center;
+  box-shadow:0 8px 22px rgba(7,23,53,.05);
+}
+.stemb-letter{font-size:30px;font-weight:700;color:var(--gold);line-height:1;margin-bottom:7px;}
+.stemb-title{font-size:10.5px;font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:4px;}
+.stemb-detail{font-size:9.5px;color:var(--tlt);line-height:1.25;}
+.stemb-note{font-size:12px;font-style:italic;color:var(--tlt);line-height:1.6;}
+.stemb-note strong{color:var(--navy);}
+.recognition-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+.recognition-card{
+  background:rgba(255,253,248,.9);border:1px solid rgba(169,120,31,.22);border-radius:8px;
+  padding:16px 16px 15px;min-height:118px;border-left:3px solid var(--gold);
+  display:flex;flex-direction:column;justify-content:space-between;
+  box-shadow:0 10px 28px rgba(7,23,53,.06);
+}
+.recognition-card.featured{grid-column:1/-1;background:var(--navy);border-color:var(--navy);border-left-color:var(--gold-lt);}
+.rec-value{font-size:clamp(22px,2.6vw,32px);font-weight:700;color:var(--navy);line-height:1.05;margin-bottom:6px;}
+.recognition-card.featured .rec-value{color:var(--gold-lt);}
+.rec-label{font-size:12px;font-weight:700;color:var(--navy);line-height:1.35;margin-bottom:4px;}
+.recognition-card.featured .rec-label{color:#fff;}
+.rec-detail{font-size:11.5px;color:var(--tlt);line-height:1.45;}
+.recognition-card.featured .rec-detail{color:rgba(255,255,255,.72);}
+
+/* ── SECTION ─────────────────────────────── */
+.sec{margin-bottom:72px;scroll-margin-top:calc(var(--nav-h)+18px);}
+.sec-head{
+  display:flex;align-items:flex-start;gap:18px;margin-bottom:28px;padding:0 0 20px;
+  border-bottom:1px solid rgba(169,120,31,.24);position:relative;
+}
+.sec-head::after{content:'';position:absolute;left:0;bottom:-1px;width:96px;height:1px;background:var(--gold);}
+.sec-num{width:36px;height:36px;flex-shrink:0;margin-top:4px;background:linear-gradient(135deg,var(--gold),var(--gold-lt));color:var(--navy);font-size:12px;font-weight:700;border-radius:6px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 18px rgba(169,120,31,.24);}
+.sec-tag{font-size:9.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-weight:700;display:block;margin-bottom:3px;}
+.sec-title{font-size:clamp(21px,2.3vw,27px);font-weight:700;color:var(--navy);line-height:1.22;}
+.sec-desc{font-size:13px;font-style:italic;color:var(--tlt);margin-top:4px;}
+
+/* ── ICON CHIP ───────────────────────────── */
+.chip{width:40px;height:40px;flex-shrink:0;border-radius:9px;display:flex;align-items:center;justify-content:center;}
+.chip svg{width:19px;height:19px;fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;}
+.chip-g{background:var(--gold-p);border:1px solid var(--ca-bdr);}
+.chip-g svg{stroke:var(--gold);}
+.chip-b{background:#E8F0FB;border:1px solid var(--cb-bdr);}
+.chip-b svg{stroke:var(--blue);}
+.chip-n{background:#E6EAF2;border:1px solid #B8C4D8;}
+.chip-n svg{stroke:var(--navy);}
+
+/* ── CARD A (gold warm) ──────────────────── */
+.card-a{
+  background:linear-gradient(180deg,#FFFCF4 0%,var(--ca-bg) 100%);border:1px solid rgba(169,120,31,.28);border-radius:8px;
+  padding:24px 22px;border-top:3px solid var(--gold);
+  transition:box-shadow .2s,transform .2s;
+}
+.card-a:hover{box-shadow:var(--shadow-sm);transform:translateY(-2px);}
+/* ── CARD B (blue cool) ──────────────────── */
+.card-b{
+  background:linear-gradient(180deg,#F7FAFF 0%,var(--cb-bg) 100%);border:1px solid rgba(21,56,104,.24);border-radius:8px;
+  padding:24px 22px;border-top:3px solid var(--blue);
+  transition:box-shadow .2s,transform .2s;
+}
+.card-b:hover{box-shadow:var(--shadow-sm);transform:translateY(-2px);}
+
+.c-title{font-size:14px;font-weight:700;color:var(--navy);margin:10px 0 5px;}
+.c-body{font-size:12.5px;color:var(--tmid);line-height:1.65;}
+.c-badge{font-size:10.5px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.7px;margin-top:10px;display:block;}
+
+/* ── ACCENT NAVY CARD ────────────────────── */
+.card-n{
+  background:linear-gradient(145deg,#071735 0%,#102A57 100%);border-radius:8px;padding:26px 24px;border-top:3px solid var(--gold);
+  transition:box-shadow .2s,transform .2s;
+}
+.card-n:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);}
+.card-n .c-title{color:var(--gold-lt);}
+.card-n .c-body{color:rgba(255,255,255,.72);}
+.card-n .c-badge{color:var(--gold-lt);}
+
+/* ── TABLE ───────────────────────────────── */
+.tbl-wrap{border:1px solid rgba(169,120,31,.22);border-radius:8px;overflow:hidden;box-shadow:var(--shadow-sm);margin-bottom:24px;background:var(--surface);}
+table{width:100%;border-collapse:collapse;font-size:13px;}
+thead th{background:linear-gradient(90deg,var(--navy),#102A57);color:var(--gold-lt);font-size:10.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;text-align:left;padding:13px 18px;}
+tbody tr{border-bottom:1px solid rgba(221,213,192,.72);}
+tbody tr:last-child{border-bottom:none;}
+tbody tr:hover{background:var(--gold-p);}
+tbody td{padding:12px 18px;color:var(--tmid);vertical-align:top;line-height:1.55;}
+tbody td:first-child{font-weight:600;color:var(--navy);width:26%;}
+tbody td:last-child{font-weight:600;color:var(--blue);}
+
+/* ── GRIDS ───────────────────────────────── */
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.g32{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+
+/* ── IBP LIST ────────────────────────────── */
+.ibp-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.ibp{display:flex;align-items:flex-start;gap:14px;padding:18px 20px;border-radius:8px;border:1px solid var(--border);transition:box-shadow .18s,transform .18s;}
+.ibp:nth-child(odd){background:var(--ca-bg);border-color:var(--ca-bdr);}
+.ibp:nth-child(even){background:var(--cb-bg);border-color:var(--cb-bdr);}
+.ibp:last-child{background:var(--gold-p);border-color:var(--gold);}
+.ibp:hover{box-shadow:var(--shadow-sm);transform:translateY(-2px);}
+.ibp-dot{width:36px;height:36px;flex-shrink:0;border-radius:6px;background:linear-gradient(135deg,var(--gold),var(--gold-lt));color:var(--navy);font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.ibp-t{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:3px;}
+.ibp-d{font-size:12px;color:var(--tmid);line-height:1.55;}
+.ibp-b{font-size:10.5px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.6px;margin-top:6px;}
+
+/* ── FORESIGHT ───────────────────────────── */
+.fs-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.fs-card{border-radius:8px;padding:22px;display:flex;gap:14px;align-items:flex-start;border:1px solid;box-shadow:0 8px 22px rgba(7,23,53,.04);}
+.fs-card:nth-child(odd){background:var(--ca-bg);border-color:var(--ca-bdr);}
+.fs-card:nth-child(even){background:var(--cb-bg);border-color:var(--cb-bdr);}
+.fs-t{font-size:13.5px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.fs-what{font-size:12px;color:var(--tmid);margin-bottom:5px;line-height:1.5;}
+.fs-val{font-size:12px;color:var(--gold);font-weight:600;line-height:1.5;}
+
+/* ── FACILITY ────────────────────────────── */
+.fac-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.fac{border-radius:8px;padding:20px 18px;border:1px solid;transition:box-shadow .18s,transform .18s;}
+.fac:nth-child(odd){background:var(--ca-bg);border-color:var(--ca-bdr);}
+.fac:nth-child(even){background:var(--cb-bg);border-color:var(--cb-bdr);}
+.fac:last-child{grid-column:1/-1;background:var(--gold-p);border-color:var(--gold);}
+.fac:hover{box-shadow:var(--shadow-sm);transform:translateY(-2px);}
+.fac-tag{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);background:rgba(255,255,255,.7);border:1px solid var(--ca-bdr);padding:2px 8px;border-radius:2px;display:inline-block;margin-bottom:8px;}
+.fac-name{font-size:13.5px;font-weight:700;color:var(--navy);margin-bottom:2px;}
+.fac-loc{font-size:11px;color:var(--tlt);font-style:italic;margin-bottom:6px;}
+.fac-use{font-size:12px;color:var(--tmid);line-height:1.55;}
+
+/* ── WHY PARTNER — two-col layout ────────── */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.why-card{
+  display:flex;gap:14px;align-items:flex-start;
+  padding:20px 20px;border-radius:8px;border:1px solid;
+  transition:box-shadow .18s,transform .18s;
+}
+.why-card:nth-child(4n+1){background:var(--ca-bg);border-color:var(--ca-bdr);}
+.why-card:nth-child(4n+2){background:var(--cb-bg);border-color:var(--cb-bdr);}
+.why-card:nth-child(4n+3){background:var(--cb-bg);border-color:var(--cb-bdr);}
+.why-card:nth-child(4n+4){background:var(--ca-bg);border-color:var(--ca-bdr);}
+.why-card:hover{box-shadow:var(--shadow-sm);transform:translateY(-2px);}
+.why-t{font-size:13.5px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.why-d{font-size:12px;color:var(--tmid);line-height:1.6;}
+
+/* ── WHAT PARTNERS RECEIVE ───────────────── */
+.receive-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+.receive-item{
+  display:flex;align-items:flex-start;gap:12px;
+  padding:16px 18px;border-radius:8px;border:1px solid;
+  box-shadow:0 8px 22px rgba(7,23,53,.04);
+}
+.receive-item:nth-child(odd){background:var(--ca-bg);border-color:var(--ca-bdr);}
+.receive-item:nth-child(even){background:var(--cb-bg);border-color:var(--cb-bdr);}
+.ri-check{width:28px;height:28px;flex-shrink:0;border-radius:6px;background:var(--gold-p);border:1px solid var(--ca-bdr);display:flex;align-items:center;justify-content:center;}
+.ri-check svg{width:14px;height:14px;stroke:var(--gold);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;}
+.ri-text{font-size:12.5px;color:var(--tmid);line-height:1.55;padding-top:3px;}
+.ri-text strong{color:var(--navy);font-weight:700;}
+
+/* ── RESEARCH AREAS ──────────────────────── */
+.research-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.res-card{
+  background:rgba(255,253,248,.9);border:1px solid rgba(169,120,31,.22);border-radius:8px;
+  padding:20px 16px;text-align:center;border-top:2px solid var(--gold);
+  transition:box-shadow .18s;
+}
+.res-card:hover{box-shadow:var(--shadow-sm);}
+.res-chip{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;}
+.res-chip svg{width:20px;height:20px;fill:none;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;}
+.res-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.res-body{font-size:11.5px;color:var(--tlt);line-height:1.55;}
+
+/* ── KEY VALUE BAR ───────────────────────── */
+.kv-bar{display:flex;flex-wrap:wrap;gap:8px;background:linear-gradient(90deg,#F8EDCF,#FFF8E6);border:1px solid rgba(169,120,31,.28);border-radius:8px;padding:17px 20px;margin-top:20px;box-shadow:0 8px 24px rgba(169,120,31,.08);}
+.kv-pill{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;color:var(--navy);}
+.kv-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+
+/* ── ENGAGEMENT MODELS ───────────────────── */
+.eng-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.eng-card{
+  background:linear-gradient(145deg,#071735 0%,#102A57 100%);border-radius:8px;padding:26px 22px;border-top:3px solid var(--gold);
+  transition:box-shadow .2s,transform .2s;
+}
+.eng-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);}
+.eng-icon{width:42px;height:42px;border-radius:9px;background:rgba(184,137,42,.15);border:1px solid rgba(212,168,75,.3);display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+.eng-icon svg{width:20px;height:20px;fill:none;stroke:var(--gold-lt);stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;}
+.eng-t{font-size:14.5px;font-weight:700;color:var(--gold-lt);margin-bottom:6px;}
+.eng-d{font-size:12px;color:rgba(255,255,255,.68);line-height:1.6;}
+.eng-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;}
+.eng-tag{font-size:10px;font-weight:700;letter-spacing:.5px;color:var(--navy);background:var(--gold);padding:2px 8px;border-radius:3px;text-transform:uppercase;}
+
+/* ── FOOTER ──────────────────────────────── */
+.footer{text-align:center;border-top:1px solid var(--border);padding:32px 0 0;margin-top:24px;}
+.footer-title{font-size:17px;font-weight:700;color:var(--navy);}
+.footer-title em{font-style:italic;color:var(--gold);}
+.footer-note{font-size:10.5px;color:var(--tlt);letter-spacing:.8px;margin-top:12px;}
+
+/* ── RESPONSIVE ──────────────────────────── */
+@media(max-width:860px){
+  .hero{grid-template-columns:1fr;}
+  .recognition-grid{grid-template-columns:1fr 1fr;}
+  .g3,.g4,.fac-grid,.research-grid,.eng-grid{grid-template-columns:1fr 1fr;}
+  .fs-grid,.ibp-grid,.why-grid,.g2,.receive-grid{grid-template-columns:1fr;}
+}
+@media(max-width:560px){
+  .g3,.g4,.fac-grid,.research-grid,.eng-grid,.why-grid,.receive-grid,.g2{grid-template-columns:1fr;}
+  .campus-visual{aspect-ratio:16/9;}
+  .campus-visual img{height:100%;}
+  .hero{padding:30px 22px;}
+  .stemb-grid{grid-template-columns:repeat(2,1fr);}
+  .stemb-card:last-child{grid-column:1/-1;}
+  .recognition-grid{grid-template-columns:1fr;}
+  .page{padding-left:14px;padding-right:14px;}
+  .n-link{padding:5px 7px;font-size:10px;}
+}
+
+/* ── SVG DEFS (reused inline) ────────────── */
+</style>
+</head>
+<body>
+
+<!-- ══ NAVBAR ══════════════════════════════════════════════════ -->
+<nav id="nav">
+  <div class="n-brand">Imperial <em>×</em> Partnership</div>
+  <div class="n-links">
+    <a class="n-link" href="#why">Why Imperial</a>
+    <a class="n-link" href="#ecosystem">Ecosystem</a>
+    <a class="n-link" href="#ibp">IBP</a>
+    <a class="n-link" href="#foresight">Foresight</a>
+    <a class="n-link" href="#consultancy">Consultancy</a>
+    <a class="n-link" href="#infrastructure">Infrastructure</a>
+    <a class="n-link" href="#receive">What You Receive</a>
+  </div>
+</nav>
+
+<div class="page">
+
+<!-- ══ HERO ════════════════════════════════════════════════════ -->
+<div class="campus-visual">
+  <img src="Imperial-College-London.webp" alt="Imperial College London campus and innovation environment">
+</div>
+
+<div class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Partnership Value Map</p>
+    <h1 class="hero-title">Imperial College London<br><em>Strategic Partnership</em></h1>
+    <p class="hero-sub">Beyond the standard partnership model — a comprehensive framework for innovation, talent, foresight, and long-term mutual growth.</p>
+    <div class="hero-rule"></div>
+    <p class="stemb-intro"><strong>Imperial College London is a world-leading institution</strong> renowned for focusing exclusively on science, technology, engineering, medicine, and business — a university built for impact from its very founding.</p>
+    <div class="stemb-grid">
+      <div class="stemb-card">
+        <div class="stemb-letter">S</div>
+        <div class="stemb-title">Science</div>
+        <div class="stemb-detail">Pioneering discovery</div>
+      </div>
+      <div class="stemb-card">
+        <div class="stemb-letter">T</div>
+        <div class="stemb-title">Technology</div>
+        <div class="stemb-detail">Innovation at scale</div>
+      </div>
+      <div class="stemb-card">
+        <div class="stemb-letter">E</div>
+        <div class="stemb-title">Engineering</div>
+        <div class="stemb-detail">Real-world solutions</div>
+      </div>
+      <div class="stemb-card">
+        <div class="stemb-letter">M</div>
+        <div class="stemb-title">Medicine</div>
+        <div class="stemb-detail">Advancing health</div>
+      </div>
+      <div class="stemb-card">
+        <div class="stemb-letter">B</div>
+        <div class="stemb-title">Business</div>
+        <div class="stemb-detail">Driving innovation</div>
+      </div>
+    </div>
+    <p class="stemb-note">World-leading science. Solving real-world challenges. Shaping the future. For the curious and ambitious.
+ — science for humanity since 1907.</p>
+  </div>
+  <div class="recognition-grid">
+    <div class="recognition-card featured">
+      <div class="rec-value">2nd</div>
+      <div>
+        <div class="rec-label">QS World University Rankings 2026</div>
+        <div class="rec-detail">Among the world's highest-ranked universities.</div>
+      </div>
+    </div>
+    <div class="recognition-card">
+      <div class="rec-value">1st</div>
+      <div>
+        <div class="rec-label">UK &amp; Europe</div>
+        <div class="rec-detail">Leading university across the region.</div>
+      </div>
+    </div>
+    <div class="recognition-card">
+      <div class="rec-value">14</div>
+      <div>
+        <div class="rec-label">Nobel Prize winners</div>
+        <div class="rec-detail">Recognition for groundbreaking research.</div>
+      </div>
+    </div>
+    <div class="recognition-card">
+      <div class="rec-value">3</div>
+      <div>
+        <div class="rec-label">Fields Medal winners</div>
+        <div class="rec-detail">Excellence in mathematics.</div>
+      </div>
+    </div>
+    <div class="recognition-card">
+      <div class="rec-value">Gold</div>
+      <div>
+        <div class="rec-label">TEF 2023</div>
+        <div class="rec-detail">Teaching Excellence Framework recognition.</div>
+      </div>
+    </div>
+    <div class="recognition-card">
+      <div class="rec-value">2026</div>
+      <div>
+        <div class="rec-label">University of the Year</div>
+        <div class="rec-detail">Awarded for graduate employment.</div>
+      </div>
+    </div>
+    <div class="recognition-card">
+      <div class="rec-value">£1.1B</div>
+      <div>
+        <div class="rec-label">Research income</div>
+        <div class="rec-detail">2024/25 academic year research strength.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SECTION — WHY PARTNER WITH IMPERIAL ═════════════════════ -->
+<section class="sec" id="why">
+  <div class="sec-head">
+    <div class="sec-num">01</div>
+    <div>
+      <span class="sec-tag">Why Partner With Imperial</span>
+      <h2 class="sec-title">The Strategic Case for an Imperial Partnership</h2>
+      <p class="sec-desc">A world-class institution offering uniquely structured, mutually beneficial engagement across talent, innovation, research, and growth.</p>
+    </div>
+  </div>
+
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="chip chip-g">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+      </div>
+      <div>
+        <div class="why-t">Access to Exceptional Talent</div>
+        <div class="why-d">Connect with a diverse pool of highly skilled students, graduates, researchers, and future industry leaders. Build your talent pipeline through internships, recruitment drives, competitions, and collaborative projects.</div>
+      </div>
+    </div>
+    <div class="why-card">
+      <div class="chip chip-b">
+        <svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+      </div>
+      <div>
+        <div class="why-t">Innovation-Driven Collaboration</div>
+        <div class="why-d">Work alongside bright minds to solve real-world challenges, test new ideas, and co-create innovative solutions aligned with your organisational goals. Academic-industry partnerships are widely recognised for accelerating innovation.</div>
+      </div>
+    </div>
+    <div class="why-card">
+      <div class="chip chip-b">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+      </div>
+      <div>
+        <div class="why-t">Strong Industry-Academia Network</div>
+        <div class="why-d">Become part of a growing ecosystem of businesses, institutions, startups, and professionals. Partnerships create opportunities for knowledge exchange, strategic collaborations, and long-term growth.</div>
+      </div>
+    </div>
+    <div class="why-card">
+      <div class="chip chip-g">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <div>
+        <div class="why-t">Brand Visibility &amp; Recognition</div>
+        <div class="why-d">Enhance your organisation's presence among students, professionals, and academic communities through events, sponsorships, workshops, conferences, and joint initiatives.</div>
+      </div>
+    </div>
+    <div class="why-card">
+      <div class="chip chip-g">
+        <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+      </div>
+      <div>
+        <div class="why-t">Research &amp; Knowledge Support</div>
+        <div class="why-d">Gain access to emerging trends, research insights, industry expertise, and data-driven approaches that help improve decision-making and organisational performance.</div>
+      </div>
+    </div>
+    <div class="why-card">
+      <div class="chip chip-b">
+        <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+      </div>
+      <div>
+        <div class="why-t">Customised Engagement Opportunities</div>
+        <div class="why-d">Whether your objective is recruitment, innovation, CSR, training, research, branding, or community outreach, Imperial can design partnership models tailored to your specific needs.</div>
+      </div>
+    </div>
+    <div class="why-card">
+      <div class="chip chip-b">
+        <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+      </div>
+      <div>
+        <div class="why-t">Skill Development &amp; Training</div>
+        <div class="why-d">Collaborate on workshops, certification programmes, seminars, hackathons, and leadership initiatives that upskill employees and develop future-ready talent.</div>
+      </div>
+    </div>
+    <div class="why-card">
+      <div class="chip chip-g">
+        <svg viewBox="0 0 24 24"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      </div>
+      <div>
+        <div class="why-t">Faster Problem Solving</div>
+        <div class="why-d">Leverage academic expertise, multidisciplinary thinking, and fresh perspectives to tackle organisational challenges efficiently and develop practical, scalable solutions.</div>
+      </div>
+    </div>
+    <div class="why-card" style="grid-column:1/-1;background:var(--gold-p);border-color:var(--gold);">
+      <div class="chip chip-g">
+        <svg viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+      </div>
+      <div>
+        <div class="why-t">Long-Term Strategic Growth</div>
+        <div class="why-d">Partnerships are not limited to one-time events. Imperial focuses on building sustainable relationships that create continuous opportunities for innovation, talent acquisition, research, and mutual growth — a partnership designed for the long term.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION — INNOVATION ECOSYSTEM ═══════════════════════════ -->
+<section class="sec" id="ecosystem">
+  <div class="sec-head">
+    <div class="sec-num">02</div>
+    <div>
+      <span class="sec-tag">Innovation &amp; Startup Ecosystem Access</span>
+      <h2 class="sec-title">Privileged Access to Europe's Most Active Startup Ecosystem</h2>
+      <p class="sec-desc">Imperial gives partners a first-look advantage into FinTech, CleanTech &amp; DeepTech ventures before they reach the open market.</p>
+    </div>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead>
+        <tr><th>Ecosystem Asset</th><th>What It Is</th><th>Partner Benefit</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Imperial Enterprise Lab</td><td>Startup incubator supporting students, staff &amp; alumni</td><td>Early-stage deal flow; first look at FinTech &amp; CleanTech startups</td></tr>
+        <tr><td>Industry Collaboration Showcase</td><td>Directory of Imperial spinouts seeking corporate partners</td><td>Direct access to AI, FinTech &amp; sustainability startups seeking industry relationships</td></tr>
+        <tr><td>Venture Catalyst Challenge</td><td>Student entrepreneurship competition — judging panels open to partners</td><td>Executives on panels = brand visibility + early talent spotting</td></tr>
+        <tr><td>Scale Space White City</td><td>Innovation hub with 1,000+ high-tech businesses</td><td>Co-location opportunities; embedded innovation lab space</td></tr>
+        <tr><td>Undaunted Climate Hub</td><td>Imperial's dedicated climate innovation community</td><td>Pipeline of climate-tech ventures for green finance or ESG portfolios</td></tr>
+        <tr><td>Imperial Incubator</td><td>Wet lab + office space for deep tech startups</td><td>Access to biotech, materials science &amp; sustainability ventures</td></tr>
+        <tr><td>Advanced Hackspace</td><td>Specialist maker space for STEM innovation at White City</td><td>Prototype testing for partner-backed ventures</td></tr>
+        <tr><td>London Biofoundry</td><td>Synthetic biology R&amp;D facility</td><td>Bio-based solutions and sustainable materials innovation</td></tr>
+        <tr><td>Co-Creation of Spinouts</td><td>Imperial co-creates spinouts with corporate partners</td><td>Co-found FinTech / CleanTech spinouts directly with Imperial academics</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="g3">
+    <div class="card-a">
+      <div class="chip chip-g">
+        <svg viewBox="0 0 24 24"><path d="M4.5 16.5L3 21l4.5-1.5M9 15l-3-3 9-9a4.243 4.243 0 016 6L12 18l-3-3z"/><path d="M14.5 9.5l-5 5"/></svg>
+      </div>
+      <div class="c-title">Early Deal Flow</div>
+      <div class="c-body">First-look access to FinTech &amp; CleanTech startups before they reach the open market via the Enterprise Lab &amp; Industry Collaboration Showcase.</div>
+      <span class="c-badge">Enterprise Lab · Showcase</span>
+    </div>
+    <div class="card-b">
+      <div class="chip chip-b">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="c-title">Green &amp; ESG Pipeline</div>
+      <div class="c-body">The Undaunted Climate Hub &amp; London Biofoundry deliver a continuous pipeline of climate-tech and bio-based ventures for sustainability-focused portfolios.</div>
+      <span class="c-badge">Climate Hub · Biofoundry</span>
+    </div>
+    <div class="card-a">
+      <div class="chip chip-g">
+        <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+      </div>
+      <div class="c-title">Spinout Co-Creation</div>
+      <div class="c-body">Co-found FinTech or CleanTech spinouts directly alongside Imperial academics — a unique corporate co-founder model that creates shared equity and shared vision.</div>
+      <span class="c-badge">Corporate Partner Model</span>
+    </div>
+  </div>
+
+  <div class="kv-bar">
+    <div class="kv-pill"><div class="kv-dot"></div>First-look deal flow</div>
+    <div class="kv-pill"><div class="kv-dot"></div>CleanTech &amp; ESG venture pipeline</div>
+    <div class="kv-pill"><div class="kv-dot"></div>Brand visibility via judging panels</div>
+    <div class="kv-pill"><div class="kv-dot"></div>Academic co-founder access</div>
+    <div class="kv-pill"><div class="kv-dot"></div>Innovation lab co-location at White City</div>
+    <div class="kv-pill"><div class="kv-dot"></div>Biotech &amp; materials science access</div>
+  </div>
+</section>
+
+<!-- ══ SECTION — IBP MEMBERSHIP ════════════════════════════════ -->
+<section class="sec" id="ibp">
+  <div class="sec-head">
+    <div class="sec-num">03</div>
+    <div>
+      <span class="sec-tag">Imperial Business Partners Membership</span>
+      <h2 class="sec-title">Imperial's Flagship Senior-Level Corporate Membership</h2>
+      <p class="sec-desc">Structured, high-access engagement across research, talent, and innovation at the highest institutional level.</p>
+    </div>
+  </div>
+
+  <div class="ibp-grid">
+    <div class="ibp">
+      <div class="ibp-dot">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      </div>
+      <div><div class="ibp-t">Pathfinder Process</div><div class="ibp-d">Imperial maps your organisation's business challenges to specific academic expertise — bespoke innovation alignment from day one, with no overhead.</div><div class="ibp-b">→ Bespoke Alignment</div></div>
+    </div>
+    <div class="ibp">
+      <div class="ibp-dot">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+      </div>
+      <div><div class="ibp-t">Access to 4,000+ World-Leading Academics</div><div class="ibp-d">Direct introductions to relevant faculty across all disciplines — consultancy-grade access without procurement overhead or external billing.</div><div class="ibp-b">→ On-demand Expert Access</div></div>
+    </div>
+    <div class="ibp">
+      <div class="ibp-dot">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+      </div>
+      <div><div class="ibp-t">Innovation Ecosystem Access</div><div class="ibp-d">Startups, scale-ups, spinouts, and fellow IBP members — elite cross-industry networking within a curated corporate cohort.</div><div class="ibp-b">→ Cross-industry Deal Flow</div></div>
+    </div>
+    <div class="ibp">
+      <div class="ibp-dot">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <div><div class="ibp-t">Judging Panels for Academic Awards</div><div class="ibp-d">Your executives judge student competitions and Imperial awards — sustained brand visibility combined with early identification of exceptional talent.</div><div class="ibp-b">→ Talent Spotting + Brand Capital</div></div>
+    </div>
+    <div class="ibp">
+      <div class="ibp-dot">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      </div>
+      <div><div class="ibp-t">Discussion Forums</div><div class="ibp-d">Your managers engage directly with Imperial students on career paths — a structured recruitment pipeline and employer brand reinforcement at source.</div><div class="ibp-b">→ Structured Recruitment</div></div>
+    </div>
+    <div class="ibp">
+      <div class="ibp-dot">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+      </div>
+      <div><div class="ibp-t">Sponsorship Opportunities</div><div class="ibp-d">Align your brand with world-class research and high-impact events — generating lasting reputational capital across science, technology, and sustainability.</div><div class="ibp-b">→ Reputational Capital</div></div>
+    </div>
+    <div class="ibp">
+      <div class="ibp-dot">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      </div>
+      <div><div class="ibp-t">Industry Collaboration Showcase</div><div class="ibp-d">Feature your portfolio ventures in Imperial's startup directory — giving backed companies credibility and access to the Imperial innovation network.</div><div class="ibp-b">→ Portfolio Visibility</div></div>
+    </div>
+    <div class="ibp">
+      <div class="ibp-dot" style="background:var(--navy);">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold-lt)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div><div class="ibp-t">Flagship Status</div><div class="ibp-d">IBP is Imperial's senior-most corporate membership — placing your organisation at the centre of a top-10 global research university, not at its periphery.</div><div class="ibp-b">→ Premier Partnership</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION — TECH FORESIGHT ════════════════════════════════ -->
+<section class="sec" id="foresight">
+  <div class="sec-head">
+    <div class="sec-num">04</div>
+    <div>
+      <span class="sec-tag">Imperial Tech Foresight — Future Intelligence Service</span>
+      <h2 class="sec-title">Future Intelligence Before Markets Know What's Coming</h2>
+      <p class="sec-desc">One of Imperial's most unique and underutilised offerings — academic intelligence that moves ahead of market cycles.</p>
+    </div>
+  </div>
+
+  <div class="fs-grid">
+    <div class="fs-card">
+      <div class="chip chip-g" style="flex-shrink:0;">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v3l2 2"/></svg>
+      </div>
+      <div>
+        <div class="fs-t">Imperial Tech Foresight</div>
+        <div class="fs-what">Access to 1,000s of academics to systematically predict future technology and regulatory trends</div>
+        <div class="fs-val">Identify macro trends before they hit financial markets or disrupt your sector</div>
+      </div>
+    </div>
+    <div class="fs-card">
+      <div class="chip chip-b" style="flex-shrink:0;">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+      </div>
+      <div>
+        <div class="fs-t">Horizon Scanning</div>
+        <div class="fs-what">Multi-disciplinary academic panels scanning emerging risks and opportunities across all sectors</div>
+        <div class="fs-val">Early warning on regulatory, technology, and climate risks — before they become crises</div>
+      </div>
+    </div>
+    <div class="fs-card">
+      <div class="chip chip-b" style="flex-shrink:0;">
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      </div>
+      <div>
+        <div class="fs-t">Scenario Planning</div>
+        <div class="fs-what">Academic-backed scenario modelling for rigorous strategic planning at the executive level</div>
+        <div class="fs-val">Board-level strategy inputs for your organisation's 5–10 year planning horizon</div>
+      </div>
+    </div>
+    <div class="fs-card">
+      <div class="chip chip-g" style="flex-shrink:0;">
+        <svg viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+      </div>
+      <div>
+        <div class="fs-t">Sector Deep Dives</div>
+        <div class="fs-what">Bespoke research reports on specific sectors, technologies, or market dynamics</div>
+        <div class="fs-val">FinTech, quantum computing, digital assets, ESG and sustainability intelligence</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION — FACULTY CONSULTANCY ═══════════════════════════ -->
+<section class="sec" id="consultancy">
+  <div class="sec-head">
+    <div class="sec-num">05</div>
+    <div>
+      <span class="sec-tag">Faculty Consultancy &amp; Strategic Advisory</span>
+      <h2 class="sec-title">Academic Authority at the Boardroom Table</h2>
+      <p class="sec-desc">Bespoke consultancy from 4,000+ world-leading academics — available for technology validation, regulatory advisory, and thought leadership.</p>
+    </div>
+  </div>
+
+  <div class="g2" style="margin-bottom:16px;">
+    <div class="card-a">
+      <div class="chip chip-g">
+        <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+      </div>
+      <div class="c-title">Technology Validation</div>
+      <div class="c-body">Independent academic validation of new products, technologies or digital platforms — credibility with regulators, investors, and institutional counterparts that commercial vendors cannot replicate.</div>
+      <span class="c-badge">→ Regulatory Credibility</span>
+    </div>
+    <div class="card-b">
+      <div class="chip chip-b">
+        <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </div>
+      <div class="c-title">Expert Testimony</div>
+      <div class="c-body">Imperial academics available as expert witnesses in regulatory or legal proceedings — supporting your organisation in FCA, PRA, and Parliamentary inquiries with world-class academic authority.</div>
+      <span class="c-badge">→ FCA · PRA · Parliament</span>
+    </div>
+    <div class="card-b">
+      <div class="chip chip-b">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a6 6 0 0112 0v2"/></svg>
+      </div>
+      <div class="c-title">Inspirational Insights</div>
+      <div class="c-body">Faculty speakers at internal events, leadership offsites, and board days — world-class intellectual stimulus to unlock strategic thinking across your leadership team.</div>
+      <span class="c-badge">→ Leadership Development</span>
+    </div>
+    <div class="card-a">
+      <div class="chip chip-g">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <div class="c-title">Sector-Shaping Specialists</div>
+      <div class="c-body">Deep domain experts in quantum finance, AI risk, climate economics, digital assets, and regulatory frameworks — competitive intelligence from academics who define the disciplines, not just study them.</div>
+      <span class="c-badge">→ Competitive Intelligence</span>
+    </div>
+    <div class="card-a">
+      <div class="chip chip-g">
+        <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+      </div>
+      <div class="c-title">Policy Engagement</div>
+      <div class="c-body">Imperial's Policy Forum connects researchers directly with policymakers — your organisation can co-author policy submissions with Imperial faculty, shaping the regulatory environment rather than merely responding to it.</div>
+      <span class="c-badge">→ Co-authoring Policy</span>
+    </div>
+    <div class="card-n">
+      <div class="chip" style="background:rgba(184,137,42,.15);border:1px solid rgba(212,168,75,.3);margin-bottom:0;flex-shrink:0;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold-lt)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      </div>
+      <div class="c-title" style="font-size:28px;line-height:1;color:var(--gold-lt);margin:10px 0 4px;">12</div>
+      <div class="c-title" style="margin-top:0;">FCA Regulatory Submissions</div>
+      <div class="c-body">Imperial faculty contributed to 12 FCA regulatory submissions in 2024/25 alone — offering partners unparalleled regulatory influence and credibility through active academic advisory relationships.</div>
+      <span class="c-badge">2024/25 Record</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION — PHYSICAL INFRASTRUCTURE ═══════════════════════ -->
+<section class="sec" id="infrastructure">
+  <div class="sec-head">
+    <div class="sec-num">06</div>
+    <div>
+      <span class="sec-tag">Physical Infrastructure &amp; Lab Access</span>
+      <h2 class="sec-title">Partner Innovation Teams Can Physically Co-locate at Imperial</h2>
+      <p class="sec-desc">Partner-backed ventures and in-house innovation teams can embed within Imperial's White City campus — Europe's most ambitious innovation district.</p>
+    </div>
+  </div>
+
+  <div class="fac-grid">
+    <div class="fac">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+        <div class="chip chip-g" style="width:30px;height:30px;border-radius:6px;">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="var(--gold)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+        </div>
+        <div class="fac-tag">Innovation Hub</div>
+      </div>
+      <div class="fac-name">Scale Space White City</div>
+      <div class="fac-loc">📍 White City Campus</div>
+      <div class="fac-use">Co-locate your innovation team alongside 1,000+ high-growth technology companies — immersive cross-pollination in a curated ecosystem.</div>
+    </div>
+    <div class="fac">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+        <div class="chip chip-b" style="width:30px;height:30px;border-radius:6px;">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="var(--blue)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <div class="fac-tag">Prototyping</div>
+      </div>
+      <div class="fac-name">Advanced Hackspace</div>
+      <div class="fac-loc">📍 White City</div>
+      <div class="fac-use">Specialist maker space for rapidly prototyping FinTech, RegTech, and other innovation solutions beyond the digital screen.</div>
+    </div>
+    <div class="fac">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+        <div class="chip chip-g" style="width:30px;height:30px;border-radius:6px;">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="var(--gold)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+        </div>
+        <div class="fac-tag">Analytics Lab</div>
+      </div>
+      <div class="fac-name">Agilent Measurement Suite</div>
+      <div class="fac-loc">📍 White City — 120m² advanced lab</div>
+      <div class="fac-use">Advanced data analytics and precision measurement R&amp;D — supporting quantitative research and model validation projects.</div>
+    </div>
+    <div class="fac">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+        <div class="chip chip-b" style="width:30px;height:30px;border-radius:6px;">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="var(--blue)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="fac-tag">Materials Science</div>
+      </div>
+      <div class="fac-name">Royce Institute</div>
+      <div class="fac-loc">📍 White City — advanced materials</div>
+      <div class="fac-use">Sustainable product development powered by advanced materials science — bridging physical innovation with ESG and sustainability ambitions.</div>
+    </div>
+    <div class="fac">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+        <div class="chip chip-g" style="width:30px;height:30px;border-radius:6px;">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="var(--gold)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="fac-tag">Startup Housing</div>
+      </div>
+      <div class="fac-name">Imperial Incubator</div>
+      <div class="fac-loc">📍 White City</div>
+      <div class="fac-use">House partner-backed climate and deep tech startups within Imperial's premier incubator — institutional credibility from day one.</div>
+    </div>
+    <div class="fac">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+        <div class="chip chip-b" style="width:30px;height:30px;border-radius:6px;">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="var(--blue)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+        </div>
+        <div class="fac-tag">BioTech R&amp;D</div>
+      </div>
+      <div class="fac-name">London Biofoundry</div>
+      <div class="fac-loc">📍 White City</div>
+      <div class="fac-use">Synthetic biology research facility enabling bio-based sustainable solutions and cutting-edge materials for ESG-aligned ventures.</div>
+    </div>
+    <div class="fac">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+        <div class="chip chip-g" style="width:30px;height:30px;border-radius:6px;">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="var(--gold)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        </div>
+        <div class="fac-tag">Innovation District</div>
+      </div>
+      <div class="fac-name">WestTech London Ecosystem</div>
+      <div class="fac-loc">📍 West London — 1,000+ high-tech businesses</div>
+      <div class="fac-use">Innovation district networking across the broader West London technology and science community — extending partner reach far beyond the campus itself and into one of Europe's most vibrant tech corridors.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION — RESEARCH AREAS ════════════════════════════════ -->
+<section class="sec" id="research">
+  <div class="sec-head">
+    <div class="sec-num">07</div>
+    <div>
+      <span class="sec-tag">Research &amp; Academic Expertise</span>
+      <h2 class="sec-title">Deep Domain Knowledge Across Finance, Technology &amp; Sustainability</h2>
+      <p class="sec-desc">Imperial's academic faculty spans every discipline relevant to modern financial services — providing unmatched depth and breadth.</p>
+    </div>
+  </div>
+
+  <div class="research-grid">
+    <div class="res-card">
+      <div class="res-chip chip-g">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      </div>
+      <div class="res-title">FinTech &amp; Digital Finance</div>
+      <div class="res-body">Digital banking, payments, RegTech, blockchain and digital asset infrastructure research.</div>
+    </div>
+    <div class="res-card">
+      <div class="res-chip chip-b">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </div>
+      <div class="res-title">Risk &amp; Regulation</div>
+      <div class="res-body">Systemic risk modelling, FCA/PRA regulatory frameworks, operational resilience, and governance research.</div>
+    </div>
+    <div class="res-card">
+      <div class="res-chip chip-g">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="res-title">Sustainable Finance &amp; ESG</div>
+      <div class="res-body">Climate risk economics, green finance product design, ESG measurement and sustainable investment frameworks.</div>
+    </div>
+    <div class="res-card">
+      <div class="res-chip chip-b">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+      </div>
+      <div class="res-title">AI &amp; Quantum Computing</div>
+      <div class="res-body">AI risk governance, quantum finance applications, machine learning in credit and markets, algorithmic oversight.</div>
+    </div>
+    <div class="res-card">
+      <div class="res-chip chip-g">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+      </div>
+      <div class="res-title">Capital Markets &amp; Asset Management</div>
+      <div class="res-body">Portfolio optimisation, derivatives pricing, fixed income, quantitative strategies, and market microstructure.</div>
+    </div>
+    <div class="res-card">
+      <div class="res-chip chip-b">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+      </div>
+      <div class="res-title">Leadership &amp; Behavioural Finance</div>
+      <div class="res-body">Executive decision-making, behavioural economics, organisational change, and stakeholder management research.</div>
+    </div>
+    <div class="res-card">
+      <div class="res-chip chip-g">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+      </div>
+      <div class="res-title">Data Science &amp; Analytics</div>
+      <div class="res-body">Big data in finance, NLP for market intelligence, predictive analytics, and real-time risk systems.</div>
+    </div>
+    <div class="res-card">
+      <div class="res-chip chip-b">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+      </div>
+      <div class="res-title">Global Economics &amp; Geopolitics</div>
+      <div class="res-body">Macro economic modelling, geopolitical risk, trade finance, international monetary systems, and emerging markets.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION — ENGAGEMENT MODELS ════════════════════════════ -->
+<section class="sec" id="engagement">
+  <div class="sec-head">
+    <div class="sec-num">08</div>
+    <div>
+      <span class="sec-tag">Customised Engagement Models</span>
+      <h2 class="sec-title">Partnership Structures Tailored to Your Objectives</h2>
+      <p class="sec-desc">Imperial designs bespoke engagement models aligned to each partner organisation's unique strategy, sector, and goals.</p>
+    </div>
+  </div>
+
+  <div class="eng-grid">
+    <div class="eng-card">
+      <div class="eng-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+      </div>
+      <div class="eng-t">Talent &amp; Recruitment</div>
+      <div class="eng-d">Structured recruitment pipelines, internship programmes, competitions, and employer branding initiatives that connect you to Imperial's exceptional graduate pool.</div>
+      <div class="eng-tags"><span class="eng-tag">Internships</span><span class="eng-tag">Competitions</span><span class="eng-tag">Graduate Hire</span></div>
+    </div>
+    <div class="eng-card">
+      <div class="eng-icon">
+        <svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+      </div>
+      <div class="eng-t">Research &amp; Innovation</div>
+      <div class="eng-d">Collaborative research projects, joint publications, innovation labs, and co-creation of products with Imperial academics and research teams.</div>
+      <div class="eng-tags"><span class="eng-tag">Joint Research</span><span class="eng-tag">Co-creation</span><span class="eng-tag">Spinouts</span></div>
+    </div>
+    <div class="eng-card">
+      <div class="eng-icon">
+        <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+      </div>
+      <div class="eng-t">Training &amp; Development</div>
+      <div class="eng-d">Executive education, workshops, certification programmes, hackathons, and leadership seminars designed to upskill your workforce at every level.</div>
+      <div class="eng-tags"><span class="eng-tag">Exec Education</span><span class="eng-tag">Workshops</span><span class="eng-tag">Hackathons</span></div>
+    </div>
+    <div class="eng-card">
+      <div class="eng-icon">
+        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <div class="eng-t">Brand &amp; Visibility</div>
+      <div class="eng-d">Sponsorships, event partnerships, panel judging, named programmes, and co-branded research that elevates your reputation within the academic and professional community.</div>
+      <div class="eng-tags"><span class="eng-tag">Sponsorship</span><span class="eng-tag">Named Chairs</span><span class="eng-tag">Events</span></div>
+    </div>
+    <div class="eng-card">
+      <div class="eng-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+      </div>
+      <div class="eng-t">Policy &amp; Advisory</div>
+      <div class="eng-d">Co-authoring policy submissions, advisory board participation, regulatory engagement, and expert testimony support for high-stakes regulatory proceedings.</div>
+      <div class="eng-tags"><span class="eng-tag">Policy Co-author</span><span class="eng-tag">Advisory Board</span><span class="eng-tag">Regulatory</span></div>
+    </div>
+    <div class="eng-card">
+      <div class="eng-icon">
+        <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+      </div>
+      <div class="eng-t">CSR &amp; Community</div>
+      <div class="eng-d">Community outreach programmes, social impact initiatives, diversity &amp; inclusion collaborations, and CSR-aligned projects with measurable societal outcomes.</div>
+      <div class="eng-tags"><span class="eng-tag">CSR Projects</span><span class="eng-tag">D&amp;I</span><span class="eng-tag">Community</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION — WHAT PARTNERS RECEIVE ═════════════════════════ -->
+<section class="sec" id="receive">
+  <div class="sec-head">
+    <div class="sec-num">09</div>
+    <div>
+      <span class="sec-tag">What Partner Organisations Receive</span>
+      <h2 class="sec-title">A Comprehensive Package of Partnership Benefits</h2>
+      <p class="sec-desc">Every Imperial partnership comes with a structured suite of benefits, formally recognised across the institution.</p>
+    </div>
+  </div>
+
+  <div class="receive-grid">
+    <div class="receive-item">
+      <div class="ri-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <div class="ri-text"><strong>Recruitment &amp; internship opportunities</strong> — structured access to Imperial's exceptional student and graduate talent pool.</div>
+    </div>
+    <div class="receive-item">
+      <div class="ri-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <div class="ri-text"><strong>Brand promotion across Imperial platforms</strong> — visibility to students, faculty, alumni, and partner organisations worldwide.</div>
+    </div>
+    <div class="receive-item">
+      <div class="ri-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <div class="ri-text"><strong>Access to student and professional communities</strong> — engagement with one of the world's most talented academic populations.</div>
+    </div>
+    <div class="receive-item">
+      <div class="ri-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <div class="ri-text"><strong>Joint events, workshops, and seminars</strong> — co-branded programming that elevates both institutional profiles.</div>
+    </div>
+    <div class="receive-item">
+      <div class="ri-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <div class="ri-text"><strong>Research and innovation collaboration</strong> — joint projects, IP co-development, and access to frontier academic knowledge.</div>
+    </div>
+    <div class="receive-item">
+      <div class="ri-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <div class="ri-text"><strong>Networking with industry leaders and academic experts</strong> — curated introductions across Imperial's global network.</div>
+    </div>
+    <div class="receive-item">
+      <div class="ri-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <div class="ri-text"><strong>Customised partnership programmes</strong> — tailored engagement aligned with your specific business goals and strategic priorities.</div>
+    </div>
+    <div class="receive-item">
+      <div class="ri-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <div class="ri-text"><strong>Recognition as an official Imperial partner</strong> — formal accreditation carrying significant reputational weight globally.</div>
+    </div>
+    <div class="receive-item">
+      <div class="ri-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <div class="ri-text"><strong>CSR and community engagement opportunities</strong> — structured social impact programming with measurable outcomes.</div>
+    </div>
+    <div class="receive-item">
+      <div class="ri-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <div class="ri-text"><strong>Early access to emerging talent and innovative ideas</strong> — first-mover advantage on the next generation of industry leaders and disruptors.</div>
+    </div>
+  </div>
+
+  <div class="kv-bar" style="margin-top:24px;">
+    <div class="kv-pill"><div class="kv-dot"></div>Talent pipeline &amp; recruitment</div>
+    <div class="kv-pill"><div class="kv-dot"></div>Brand recognition across academia</div>
+    <div class="kv-pill"><div class="kv-dot"></div>Research collaboration &amp; IP</div>
+    <div class="kv-pill"><div class="kv-dot"></div>Regulatory influence &amp; policy co-authoring</div>
+    <div class="kv-pill"><div class="kv-dot"></div>Innovation deal flow &amp; spinout access</div>
+    <div class="kv-pill"><div class="kv-dot"></div>Official partner recognition</div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ═══════════════════════════════════════════════════ -->
+<div class="footer">
+  <div class="footer-title">Imperial College London — <em>Partnership Value Map</em></div>
+  <p style="font-size:13px;font-style:italic;color:var(--tlt);max-width:520px;margin:6px auto 0;">A world-class academic institution committed to building transformative, long-term partnerships with organisations that share a vision for innovation and growth.</p>
+  <p class="footer-note">IMPERIAL COLLEGE LONDON · PARTNERSHIP VALUE MAP · FOR PARTNERSHIP PROPOSAL USE</p>
+</div>
+
+</div><!-- /page -->
+
+<script>
+(function(){
+  const links=document.querySelectorAll('.n-link');
+  const ids=['why','ecosystem','ibp','foresight','consultancy','infrastructure','receive'];
+  const secs=ids.map(id=>document.getElementById(id));
+  function upd(){
+    const sy=window.scrollY;
+    let cur=null;
+    secs.forEach((s,i)=>{
+      if(!s)return;
+      const top=s.getBoundingClientRect().top+sy-90;
+      if(sy>=top)cur=i;
+    });
+    links.forEach((l,i)=>l.classList.toggle('active',i===cur));
+  }
+  window.addEventListener('scroll',upd,{passive:true});
+  upd();
+})();
+</script>
+</body>
+</html>
